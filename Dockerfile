@@ -4,13 +4,13 @@ FROM docker.io/linuxserver/code-server:latest
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PLAYWRIGHT_BROWSERS_PATH=/opt/playwright
 
-# Stap 1: Installeer basispakketten en Playwright OS-dependencies
+# Stap 1: Installeer basispakketten en de juiste Playwright OS-dependencies voor Ubuntu 24.04
 RUN apt-get update --fix-missing && \
     apt-get install -y --no-install-recommends \
     curl jq default-jdk-headless zip unzip gnupg ca-certificates \
     libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 \
-    libxkbcommon0 libxcomposite1 libxdamage1 libxext6 libxfix6 \
-    librandr2 libgbm1 libpango-1.0-0 libcairo2 libasound2 && \
+    libxkbcommon0 libxcomposite1 libxdamage1 libxext6 libxfixes3 \
+    libxrandr2 libgbm1 libpango-1.0-0 libcairo2 libasound2t64 && \
     \
 # Stap 2: NodeSource repository toevoegen en Node.js installeren
     mkdir -p /etc/apt/keyrings && \
