@@ -20,7 +20,7 @@ RUN apt-get update --fix-missing && \
     apt-get install -y nodejs && \
     \
 # Stap 3: Global npm packages & Playwright browser setup
-    npm install -g @salesforce/cli@latest prettier @prettier/plugin-xml @playwright/test && \
+    npm install -g @salesforce/cli@latest prettier @prettier/plugin-xml @playwright/test codex-cli && \
     mkdir -p /opt/playwright && \
     npx playwright install chromium && \
     chmod -R 777 /opt/playwright && \
