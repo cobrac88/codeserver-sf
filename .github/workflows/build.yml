@@ -5,6 +5,7 @@ on:
     branches: [ "main" ]
   schedule:
     - cron: '0 0 * * *' # Every night at 00:00 UTC or 02:00 Europe/Amsterdam
+  workflow_dispatch:
 
 jobs:
   build-and-push:
